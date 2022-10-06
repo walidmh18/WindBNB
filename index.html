@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,maximum-scale=5"
+    />
+    <title>WindBnb</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a href="#" id="navLogo"><img src="images/logo.svg" alt="" /></a>
+      <div class="navSearch" onclick="showSearchNav()">
+        <button class="navSearchBtn locationSearch">add location</button>
+        <button class="navSearchBtn guestsSearch">add guests</button>
+        <button class="navSearchBtn searchIcon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </header>
+
+    <nav class="searchNav">
+      <div class="locationInput">
+        <div class="locationSwitch active" onclick="toggleActiveness('.locationParams', this)">
+          <p class="inputTitle">LOCATION</p>
+          <p class="inputValue locationValue full">Helsinki, Finland</p>
+        </div>
+        <div class="locationParams active">
+          <button onclick="setLocationSearch(this.innerText)">
+            <i class="fa-solid fa-location-dot"></i> Helsinki, Finland</button>
+          <button onclick="setLocationSearch(this.innerText)">
+            <i class="fa-solid fa-location-dot"></i> Turku, Finland</button>
+          <button onclick="setLocationSearch(this.innerText)">
+            <i class="fa-solid fa-location-dot"></i> Oulu, Finland</button>
+          <button onclick="setLocationSearch(this.innerText)">
+            <i class="fa-solid fa-location-dot"></i> Vaasa, Finland</button>
+        </div>
+      </div>
+
+      <div class="guestsInput">
+        <div class="guestsSwitch" onclick="toggleActiveness('.guestsInputs', this)">
+          <p class="inputTitle">GUSETS</p>
+          <p class="inputValue guestsValue ">add guests</p>
+        </div>
+        <div class="guestsInputs">
+          <div class="adults">
+            <p class="guestsInpsTitle">adults</p>
+            <p class="guestsInpsSubTitle">ages 13 or above</p>
+            <div class="adultsCounter">
+              <button id="adultsCounterMinus" onclick="valueMinus('adultsCounterOut')">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <span id="adultsCounterOut">2</span>
+              <button id="adultsCounterPlus" onclick="valuePlus('adultsCounterOut')">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="children">
+            <p class="guestsInpsTitle">children</p>
+            <p class="guestsInpsSubTitle">2 - 12 years old</p>
+            <div class="childrenCounter">
+              <button id="childrenCounterMinus" onclick="valueMinus('childrenCounterOut')">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <span id="childrenCounterOut">1</span>
+              <button id="childrenCounterPlus" onclick="valuePlus('childrenCounterOut')">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="searchBtn" onclick="search()">
+        <i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        
+      </nav>
+      <div class="blank"></div>
+
+    <div class="body">
+      <div class="header">
+        <h2>Stays in Finland</h2>
+        <p><span class="staysNumber">12</span>+ stays</p>
+      </div>
+
+      <div class="staysGridContainer"></div>
+    </div>
+  </body>
+</html>
